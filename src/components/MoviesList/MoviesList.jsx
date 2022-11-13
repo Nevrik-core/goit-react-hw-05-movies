@@ -1,4 +1,4 @@
-import { Gallery, Container, GalleryItem, GalleryLink, GalleryImg, MovieTitle } from "./MoviesList.styled";
+import { Container, CardWrapper, GalleryItem, GalleryLink, GalleryImg, MovieTitle } from "./MoviesList.styled";
 // import { MoviesListItem } from "./MoviesListItem/MoviesListItem";
 // import { GalleryItem, Container, GalleryLink, GalleryImg, MovieTitle } from "./MoviesListItem/MoviesListItem.styled";
 
@@ -6,26 +6,19 @@ import { Gallery, Container, GalleryItem, GalleryLink, GalleryImg, MovieTitle } 
 export const MoviesList = ({movies}) => {
 
     return (
-        <div>
-            <Gallery>
-                {movies.map((movie) => (
-                    <>
-                        <GalleryItem key={movie.id}>
-                            <Container>
-                                <GalleryLink>
-                                    <div>
-                                        <GalleryImg src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                                    </div>
-                                    <MovieTitle>{movie.title || movie.name}</MovieTitle>
-                                </GalleryLink>
-                            </Container>
-                       </GalleryItem>
-                        
-                        </>
+        <Container>
+            {movies.map(({id, imdb_id, name, title, poster_path}) => (
+                <div key={id}>
+                    <GalleryLink to={`/goit-react-hw-05-movies/movies/${id}`}>
+                        <CardWrapper>
+                            <GalleryImg src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
+                            <MovieTitle>{title || name}</MovieTitle>
+                        </CardWrapper>
+                        </GalleryLink>
                     
-        ))}
-            </Gallery>
-        </div>
+                </div>            
+    ))}
+        </Container>
 
     )
 }
