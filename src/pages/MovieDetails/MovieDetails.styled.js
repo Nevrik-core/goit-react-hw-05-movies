@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { BackLink } from "../../components/BackLnk/BackLink";
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
 /* margin: 0 220px; */
@@ -46,4 +47,47 @@ export const PosterImg = styled.img`
     @media screen and (max-width: 320px){
         height:90%;
     }
+`;
+
+export const AddInfoTitle = styled.h2`
+  font-size: 18px;
+  text-align: center;
+    margin-top: 40px;
+`;
+
+export const AddInfo = styled.ul`
+  list-style: none;
+  padding-left: 0px;
+`;
+
+export const AddInfoItem = styled.li`
+  /* margin-top: 40px; */
+  margin-bottom: 30px;
+  text-align: center;
+`;
+
+export const AddInfoLink = styled(NavLink)`
+ /* margin-right: 10px; */
+text-transform: uppercase;
+text-decoration: none;
+font-weight: 700;
+font-size: 1rem;
+color: black;
+/* text-align: center; */
+margin-right: 5px;
+margin-left: 5px;
+:hover{
+    color: brown;
+}
+
+&.active {
+    /* composes: link; */
+    color: brown;
+  }
+`;
+
+export const ErrorTitle = styled.div`
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
 `;

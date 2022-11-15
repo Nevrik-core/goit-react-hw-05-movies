@@ -1,11 +1,12 @@
+import { Loading } from "components/Loading/Loading";
 import { useState, useEffect } from "react";
 
 import { fetchTrending } from 'services/fetch';
 import { MoviesList } from "../../components/MoviesList/MoviesList";
+import { Title } from './Home.styled';
 
 
-
-export function TrendingMovies() {
+function TrendingMovies() {
 
     const [movies, setMovies] = useState([]);
     const [total, setTotal] = useState(0);
@@ -14,18 +15,22 @@ export function TrendingMovies() {
         (async function addMovies() {
       try {
           const fetchedTrends = await fetchTrending(1);
-          // console.log(fetchedTrends);
+          console.log(fetchedTrends);
           setMovies([...fetchedTrends.results]);
       } catch (error) {
-        console.log(error)
+      
+        console.log(error.response.data)
       }
     })();
     }, [])
 
     return (
-        <>
-             <MoviesList movies={movies} />
+      <>
+              <Title>Trending this week</Title>
+        <MoviesList movies={movies} />
         </>
        
     )
 }
+
+export default TrendingMovies;
