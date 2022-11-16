@@ -1,10 +1,11 @@
-import { nanoid } from 'nanoid';
+
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import anyActor from './anyActor.jpg';
 import { fetchCast } from '../../services/fetch';
+import anyActor from './anyActor.jpg';
+import { nanoid } from 'nanoid';
 import { Container, CastList, ImgWrapper, CastImg, CastInfo, CastName, Error} from './Cast.styled';
 
 function Cast() {

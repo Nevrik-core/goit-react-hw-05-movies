@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import { StyledLink } from './BackLink.styled';
 
+import { StyledLink } from './BackLink.styled';
 
 
 export const BackLink = ({ to, children }) => {

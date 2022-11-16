@@ -25,7 +25,6 @@ export const ImgWrapper = styled.div`
 export const CastImg = styled.img`
   object-fit: cover;
   width: 100%;
-  /* max-width: 200px; */
   height: auto;
 `;
 export const CastInfo = styled.p`

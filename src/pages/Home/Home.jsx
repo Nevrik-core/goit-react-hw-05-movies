@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 import { fetchTrending } from 'services/fetch';
@@ -25,9 +24,9 @@ function TrendingMovies() {
 
     return (
       <>
-              <Title>Trending this week</Title>
+        <Title>Trending this week</Title>
         <MoviesList movies={movies} />
-        </>
+      </>
        
     )
 }

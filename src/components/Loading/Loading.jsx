@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Container, LoadingGif, Text } from './Loading.styled';
 import catgif from './loading.gif'
 

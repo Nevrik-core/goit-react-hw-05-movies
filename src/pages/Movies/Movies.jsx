@@ -15,8 +15,9 @@ import { SearchBox } from "../../components/Searchbox/Searchbox";
   const [moviesList, setMoviesList] = useState([]);
   const page = Number(searchParams.get('page') ?? 1);
 
-    const formSubmitHandler = e => {
-    e.preventDefault();
+   const formSubmitHandler = e => {  
+     e.preventDefault();
+     
     const searchForm = e.currentTarget.elements.query.value;
       if (searchForm === '') {
         toast.error('Please fill me ^.~');
@@ -38,7 +39,7 @@ import { SearchBox } from "../../components/Searchbox/Searchbox";
       return;
     }
 
-    async function addMoviesListByQuery() {
+    (async function addMoviesListByQuery() {
       try {
         const data = await fetchMoviesByQuery(query, page);
         if (page > 1) {
@@ -47,15 +48,14 @@ import { SearchBox } from "../../components/Searchbox/Searchbox";
         if (data.results.length === 0) {
           toast.error('Write properly');
           return;
-      }
+        }
         setMoviesList([...data.results]);
         setSearchParams({ query: query, page: page });
     } catch (error) {
         console.log(error.response.data);
       }
-    }
+    })();
 
-    addMoviesListByQuery();
   }, [query, page, setSearchParams]);
 
   return (

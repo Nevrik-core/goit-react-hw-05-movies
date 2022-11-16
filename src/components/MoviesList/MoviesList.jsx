@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 import { Container, CardWrapper, GalleryLink, GalleryImg, MovieTitle } from "./MoviesList.styled";
 import noPoster from './noPoster.jpg';
-import { useLocation } from 'react-router-dom';
+
 
 export const MoviesList = ({movies}) => {
 const location = useLocation();

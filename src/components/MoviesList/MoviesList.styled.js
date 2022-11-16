@@ -42,8 +42,5 @@ export const GalleryImg = styled.img`
 
 export const MovieTitle = styled.p`
 text-transform: uppercase;
-/* text-decoration: none; */
 color: black;
-/* font: 1.2rem "Fira Sans", sans-serif; */
-
 `;

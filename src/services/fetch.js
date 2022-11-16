@@ -16,8 +16,8 @@ export async function fetchTrending() {
   return response.data;
   };
 
-  
-   
+
+
 export async function fetchMovieByID(id) {
 
   const response = await axios.get(
@@ -39,14 +39,14 @@ export async function fetchCast(id) {
   const response = await axios.get(
     `/${params.movieID}${id}${params.credits}?api_key=${api_key}&language=en-US`
   );
-
   return response.data;
 }
+
+
 
 export async function fetchReviews(id) {
   const response = await axios.get(
     `/${params.movieID}${id}${params.reviews}?api_key=${api_key}&language=en-US`
   );
-
   return response.data;
 }
