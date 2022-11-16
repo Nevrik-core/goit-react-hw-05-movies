@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import { useState, useEffect } from "react";
 import { Container } from 'styled-bootstrap-grid';
 import { lazy, Suspense } from "react";
@@ -7,7 +7,7 @@ import { Loading} from './Loading/Loading'
 // import { MovieDetails } from "../pages/MovieDetails/MovieDetails";
 // import { TrendingMovies } from "pages/Home/Home";
 import {NotFound} from './NotFound/NotFound'
-// import { Cast } from '../components/Cast/Cast';
+
 
 import { Header, Link } from "./App.styled";
 

@@ -1,4 +1,4 @@
-import { Loading } from "components/Loading/Loading";
+
 import { useState, useEffect } from "react";
 
 import { fetchTrending } from 'services/fetch';
@@ -9,7 +9,6 @@ import { Title } from './Home.styled';
 function TrendingMovies() {
 
     const [movies, setMovies] = useState([]);
-    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         (async function addMovies() {
