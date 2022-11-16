@@ -6,12 +6,13 @@ export const ReviewList = styled.ul`
 `;
 export const ReviewItem = styled.li`
   text-align: left;
+  margin-bottom: 40px;
 `;
 export const ReviewAuthor = styled.h2`
   font-size: 18px;
 `;
 export const ReviewText = styled.p`
-  background-color: rgb(235, 233, 235);
+  background-color: rgb(245, 245, 245);
   padding: 20px;
 `;
 

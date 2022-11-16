@@ -14,7 +14,7 @@ function TrendingMovies() {
         (async function addMovies() {
       try {
           const fetchedTrends = await fetchTrending(1);
-          console.log(fetchedTrends);
+          // console.log(fetchedTrends);
           setMovies([...fetchedTrends.results]);
       } catch (error) {
       

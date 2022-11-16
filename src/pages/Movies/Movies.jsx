@@ -18,14 +18,16 @@ import { SearchBox } from "../../components/Searchbox/Searchbox";
     const formSubmitHandler = e => {
     e.preventDefault();
     const searchForm = e.currentTarget.elements.query.value;
-    if (searchForm === '') {
-      toast.error('Please fill me ^.~');
-      return;
-    }
+      if (searchForm === '') {
+        toast.error('Please fill me ^.~');
+        return;
+      }
       if (searchParams.get('query') === searchForm) {
         toast.error("You're repeating yourself.");
         return;
       }
+
+    
       
     setSearchParams(searchForm !== '' ? { query: searchForm} : '');
     setMoviesList([]);
@@ -42,17 +44,17 @@ import { SearchBox } from "../../components/Searchbox/Searchbox";
         if (page > 1) {
           setMoviesList(prevMoviesList => [...prevMoviesList, ...data.results]);
         }
-        setMoviesList([...data.results]);
-        // setTotal(Math.round(data.total_results / 20));
-        setSearchParams({ query: query, page: page });
-
         if (data.results.length === 0) {
           toast.error('Write properly');
-        }
-      } catch (error) {
+          return;
+      }
+        setMoviesList([...data.results]);
+        setSearchParams({ query: query, page: page });
+    } catch (error) {
         console.log(error.response.data);
       }
     }
+
     addMoviesListByQuery();
   }, [query, page, setSearchParams]);
 

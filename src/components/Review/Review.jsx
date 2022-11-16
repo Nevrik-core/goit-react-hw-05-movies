@@ -31,7 +31,7 @@ const Review = () => {
                     {review.map(review => {
                         return (
                             <ReviewItem key={nanoid(3)}>
-                                <ReviewAuthor>Author: {review.author}</ReviewAuthor>
+                                <ReviewAuthor>{review.author}</ReviewAuthor>
                                 <ReviewText>{review.content}</ReviewText>
                             </ReviewItem>
                           );
