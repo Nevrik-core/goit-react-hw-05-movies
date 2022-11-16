@@ -18,7 +18,7 @@ function Cast() {
         try {
           const data = await fetchCast(movieId);
             setCast(data.cast);
-            console.log(data.cast);
+            // console.log(data.cast);
           return data.cast;
         } catch (error) {
           console.log(error.response.data);
