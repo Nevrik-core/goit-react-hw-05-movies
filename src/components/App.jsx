@@ -18,21 +18,23 @@ export function App() {
     <Container >
       <Header>
         <nav>
-            <Link to="/goit-react-hw-05-movies/" end>Home</Link>
-            <Link to="/goit-react-hw-05-movies/movies">Movies</Link>
+            <Link to="/" end>Home</Link>
+            <Link to="/movies">Movies</Link>
         </nav>
       </Header>
       <Suspense fallback={<Loading/>}>
-      <Routes>
-        <Route path="/goit-react-hw-05-movies/" index element={<TrendingMovies />} />
-        <Route path="/goit-react-hw-05-movies/movies/" element={<Movies/>} />
-          <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="review" element={<Review />} />
-            </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+        <Routes>
+          <Route path="/" index element={<TrendingMovies />} />
+          <Route path="/movies/" element={<Movies />} />
+            
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+              <Route path="cast" element={<Cast />} />
+              <Route path="review" element={<Review />} />
+          </Route>
+            
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </Container>
   );
 };

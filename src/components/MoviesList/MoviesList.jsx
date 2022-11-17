@@ -13,7 +13,7 @@ const location = useLocation();
         <Container>
             {movies.map(({id, name, title, poster_path}) => (
                 <div key={id}>
-                    <GalleryLink to={`/goit-react-hw-05-movies/movies/${id}`} state={{ from: location }}>
+                    <GalleryLink to={`/movies/${id}`} state={{ from: location }}>
                         <CardWrapper>
                             <GalleryImg src={
                                 poster_path
